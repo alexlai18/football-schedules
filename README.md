@@ -1,7 +1,8 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Football Central!
+This website is to create a singular website so I can view the recent schedules of leagues and competitions that I personally care about, without needing to do multiple google searches.
 
 ## Getting Started
-
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 First, run the development server:
 
 ```bash
