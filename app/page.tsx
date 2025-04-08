@@ -33,7 +33,7 @@ export default function Home() {
           <TabsContent value="basketball" className="space-y-4">
             <FixturesList sport="basketball" />
           </TabsContent>
-          <TabsContent value="tennis" className="space-y-4">
+          <TabsContent value="f1" className="space-y-4">
             <FixturesList sport="F1" />
           </TabsContent>
         </Tabs>
