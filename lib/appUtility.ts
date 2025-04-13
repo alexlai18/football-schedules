@@ -4,7 +4,7 @@ export const relevantSports: string[] = [
   "racing"
 ]
 
-export const quickLinks: any = {
+export const quickLinks: { [key: string]: { [key: string]: string } }  = {
   "Football Leagues": {
     "Premier League": "eng.1",
     "La Liga": "esp.1",
