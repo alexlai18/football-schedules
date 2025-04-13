@@ -3,8 +3,6 @@ import { CalendarDateRangePicker } from "@/components/date-range-picker";
 import { FixturesList } from "@/components/fixtures-list";
 import { MainNav } from "@/components/main-nav";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Image from "next/image";
-import { useEffect } from "react";
 
 export default function Home() {
   return (

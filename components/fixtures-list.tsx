@@ -9,7 +9,9 @@ interface SportInputType {
 export function FixturesList({ sport }: SportInputType) {
   // Fetch via sport
   console.log(sport);
-  const fixtures: any[] = []
+  const fixtures: any[] = [{
+    
+  }]
 
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
