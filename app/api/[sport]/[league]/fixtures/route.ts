@@ -1,3 +1,4 @@
+import { parseFootballFixtures } from "@/lib/apiDataParsers";
 import { fetchSportsFixtures } from "@/lib/apiUtility";
 import { NextResponse } from "next/server";
 
@@ -7,9 +8,10 @@ export async function GET(
 {
   try {
     const { sport, league } = await params;
-    const response: NextResponse = await fetchSportsFixtures(sport, league);
-
-    return response;
+    const response: any = await fetchSportsFixtures(sport, league);
+    
+    const parsedData = parseFootballFixtures(response);
+    return NextResponse.json(parsedData);
   } catch (err: any) {
     return NextResponse.json(
       { message: `Error retrieving sports leagues` },

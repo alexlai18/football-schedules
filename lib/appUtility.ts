@@ -39,3 +39,19 @@ export const quickLinks: { [key: string]: { [key: string]: string } }  = {
     "F1": "f1"
   }
 }
+
+export const calculateUserOffset = () => {
+  const userOffset = new Date().getTimezoneOffset(); // in minutes
+  const sign = userOffset > 0 ? '-' : '+'; // "+" for UTC+ and "-" for UTC-
+  const absoluteOffset = Math.abs(userOffset);
+  const hours = String(Math.floor(absoluteOffset / 60)).padStart(2, '0');
+  const minutes = String(absoluteOffset % 60).padStart(2, '0');
+  const formattedOffset = `${sign}${hours}:${minutes}`;
+  return encodeURIComponent(formattedOffset)
+}
+
+export const calculateDate = () => {
+  const currentDate = new Date();
+  const formattedDate = currentDate.toISOString().split('T')[0].replace(/-/g, '');
+  return formattedDate
+}

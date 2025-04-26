@@ -1,5 +1,6 @@
 import { getHeaders, SPORTS_API_BASE_URL } from "@/lib/apiConfig";
 import { NextResponse } from "next/server";
+import { calculateDate, calculateUserOffset } from "./appUtility";
 
 export async function fetchSportLeagues(sport: string): Promise<NextResponse> {
   const response = await fetch(`${SPORTS_API_BASE_URL}/leagues/dropdown?sport=${sport}`, {
@@ -17,8 +18,8 @@ export async function fetchSportLeagues(sport: string): Promise<NextResponse> {
   return NextResponse.json(data);
 }
 
-export async function fetchSportsFixtures(sport: string, league: string): Promise<NextResponse> {
-  const response = await fetch(`${SPORTS_API_BASE_URL}/sports/${sport}/${league}/scoreboard`, {
+export async function fetchSportsFixtures(sport: string, league: string): Promise<any> {
+  const response = await fetch(`${SPORTS_API_BASE_URL}/${sport}/fixtures/_/date/${calculateDate()}/league/${league}?_xhr=pageContent&offset=${calculateUserOffset()}`, {
     method: "GET",
     headers: getHeaders(),
   });
@@ -30,7 +31,7 @@ export async function fetchSportsFixtures(sport: string, league: string): Promis
     )
   }
   const data = await response.json();
-  return NextResponse.json(data);
+  return data;
 }
 
 export async function fetchTeamsInLeague(sport: string, league: string): Promise<NextResponse> {
